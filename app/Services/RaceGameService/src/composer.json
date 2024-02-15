@@ -1,0 +1,9 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Vehicle\\": "src/Vehicle",
+            "Player\\": "src/Player",
+            "Race\\": "src/Race"
+        }
+    }
+}
