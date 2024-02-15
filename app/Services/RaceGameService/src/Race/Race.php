@@ -4,6 +4,7 @@ namespace App\Services\RaceGameService\src\Race;
 
 
 use App\Services\RaceGameService\Enumerations\Unit;
+use App\Services\RaceGameService\src\Player\PlayerFactory;
 
 class Race
 {
@@ -46,5 +47,15 @@ class Race
     public function setPlayers($player): void
     {
         $this->players[] = $player;
+    }
+
+    public function getPlayersFromInput(int $count, array $vehicles): void
+    {
+        for ($i = 1; $i <= $count; $i++) {
+            $choice = \cli\menu($vehicles, false, "Please select a vehicle for player $i");
+            echo "You have selected {$vehicles[$choice]->getName()} for player $i.\n";
+
+            $this->setPlayers(PlayerFactory::createPlayer("Player $i", $vehicles[$choice]));
+        }
     }
 }
