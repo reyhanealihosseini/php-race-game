@@ -1,6 +1,5 @@
 <?php
 
-use App\Services\RaceGameService\src\Player\PlayerFactory;
 use App\Services\RaceGameService\src\Vehicle\VehicleFactory;
 use cli\Arguments;
 
